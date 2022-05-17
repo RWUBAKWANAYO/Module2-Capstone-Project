@@ -21,7 +21,8 @@ getLeagues=(data) => {
 }
 
 fetchLeague = () => {
-  fetch(this.BaseUrl).then((res) => res.json()).then((data) => this.getLeagues(data.data));
+  fetch(this.BaseUrl).then((res) => res.json())
+    .then((data) => this.getLeagues(data.data.slice(0, 6)));
 }
 }
 export default Leagues;

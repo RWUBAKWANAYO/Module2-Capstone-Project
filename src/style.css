@@ -92,3 +92,22 @@ footer p {
   box-shadow: 2px 2px 2px #000;
   width: 100%;
 }
+
+@media (max-width: 1000px) {
+  .content-card { width: 35%; }
+}
+
+@media (max-width: 768px) {
+  .content-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-card {
+    width: 250px;
+    margin: 0;
+    margin-bottom: 5%;
+  }
+}
