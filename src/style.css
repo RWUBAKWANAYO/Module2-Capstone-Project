@@ -6,12 +6,13 @@
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: #fff;
+  background-color: bisque;
+  min-height: 100vh;
   margin: 0 auto;
 }
 
 #logo {
-  width: 80px;
+  width: 100px;
   padding: 10px;
 }
 
@@ -20,8 +21,7 @@ header {
   align-items: center;
   padding: 0 10%;
   width: 100%;
-  background-color: #f5f5f5;
-  box-shadow: 0 2px 4px #e5e5e5;
+  background-color: aliceblue;
 }
 
 .nav-list {
@@ -31,64 +31,9 @@ header {
 }
 
 footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   border-top: 2px solid #000;
   width: 100%;
-  padding: 20px 0;
-}
-
-footer p {
-  width: 80%;
-  margin: auto;
-}
-
-/* Home Page */
-
-.content-body {
-  width: 80%;
-  min-height: 100vh;
-  margin: 4rem auto;
-}
-
-.content-card {
-  width: 23%;
-  display: inline-block;
-  margin: 0 9.5% 5% 0;
-}
-
-.card-img-wrapper {
-  width: 100%;
   padding: 20px;
-  background-color: #f5f5f5;
-}
-
-.card-img-wrapper img {
-  width: 100%;
-}
-
-.card-description {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0 20px 0;
-}
-.card-description h4 { max-width: 80%; }
-
-.card-likes {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.comment-button {
-  outline: none;
-  border: 1px #000 solid;
-  background-color: transparent;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 10px 20px;
-  cursor: pointer;
-  box-shadow: 2px 2px 2px #000;
-  width: 100%;
 }
