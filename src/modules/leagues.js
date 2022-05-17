@@ -8,6 +8,8 @@ leagueData = [];
 
 BaseUrl = 'https://api-football-standings.azharimm.site/leagues';
 
+externalBaseUrl = '';
+
 getLeagues=(data) => {
   const contentBody = document.querySelector('.content-body');
   contentBody.innerHTML = data.map((el) => `<div class="content-card">
