@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: bisque;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+#logo {
+  width: 100px;
+  padding: 10px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  width: 100%;
+  background-color: aliceblue;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 0 10px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  border-top: 2px solid #000;
+  width: 100%;
+  padding: 20px;
+}
