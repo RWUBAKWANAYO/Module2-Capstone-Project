@@ -1,9 +1,11 @@
+const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 const getDetail = (item) => {
   const popUp = document.querySelector('.pop-up-window');
   const body = document.querySelector('body');
   body.style.overflow = 'hidden';
   popUp.style.display = 'flex';
-  popUp.innerHTML = `<div class="pop-up"><div id="close">&times</div>
+  popUp.innerHTML = `<div class="pop-up">
+    <div id="close">&times</div>
     <div class="pop-up-img"><img src=${item.logos.light} alt="logo"/></div>
     <div class="card-name"><h1>${item.name}</h1></div>
     <div class="details"><p><b>slug: </b>${item.slug}</p><p><b>abbr: </b>${item.abbr}</p></div>
@@ -12,14 +14,23 @@ const getDetail = (item) => {
     <div class="add-comment">Add a comment</div>
     <input type="text" id="name" placeholder="Your name">
     <textarea id="txt-area" placeholder="Your insights"></textarea>
-    <button class="comment-button">Comment</button>
+
+   
+
+    <button class="commentBtn">Comment</button>
+
     </div>
 `;
-  const btn = document.querySelector('#close');
-  btn.onclick = () => {
+  const closeBtn = document.querySelector('#close');
+  const cmtBtn = document.querySelector('.commentBtn');
+
+  closeBtn.onclick = () => {
     popUp.style.display = 'none';
     body.style.overflow = 'scroll';
   };
-};
 
+  cmtBtn.onclick = () => {
+    fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/:app_id/comments')
+  }
+};
 export default getDetail;
