@@ -112,7 +112,10 @@ footer p {
 .pop-up {
   width: 90%;
   border: 2px solid #000;
-  padding: 0 10%;
+  padding: 0 16%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .pop-up-img {
@@ -139,6 +142,32 @@ footer p {
   cursor: pointer;
 }
 
+.card-name,
+.comment-counter,
+.generate-comments,
+.add-comment,
+input {
+  margin: 10px 0;
+  display: block;
+}
+
+#txt-area {
+  width: 80%;
+  border: 2px solid #000;
+  padding: 5px;
+}
+
+#name {
+  border: 2px solid #000;
+  padding: 5px;
+  width: 50%;
+}
+
+.pop-up > .comment-button {
+  width: fit-content;
+  margin: 20px 0;
+}
+
 /* pop-up window end */
 
 @media (max-width: 1000px) {
@@ -157,5 +186,11 @@ footer p {
     width: 250px;
     margin: 0;
     margin-bottom: 5%;
+  }
+}
+
+@media (min-width: 600px) {
+  .pop-up-img > img {
+    width: 30%;
   }
 }

@@ -14,7 +14,11 @@ const getDetail = (item) => {
     <div class="add-comment">Add a comment</div>
     <input type="text" id="name" placeholder="Your name">
     <textarea id="txt-area" placeholder="Your insights"></textarea>
+
+   
+
     <button class="commentBtn">Comment</button>
+
     </div>
 `;
   const closeBtn = document.querySelector('#close');
