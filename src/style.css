@@ -44,6 +44,10 @@ footer p {
 }
 
 /* Home Page */
+a {
+  text-decoration: none;
+  color: #000;
+}
 
 .content-body {
   width: 80%;
