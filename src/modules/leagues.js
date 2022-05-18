@@ -17,7 +17,7 @@ getLeagues=(data) => {
     <div class="card-description"><h4>${el.name}</h4><span class="card-likes"><i class="fa-regular fa-heart"></i><small>5 likes</small></span></div>
     <button class="comment-button">Comments</button>
     </div>
-`);
+`).join('');
 }
 
 fetchLeague = () => {
