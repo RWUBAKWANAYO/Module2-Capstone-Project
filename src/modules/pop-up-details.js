@@ -1,4 +1,4 @@
-const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+// const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 const getDetail = (item) => {
   const popUp = document.querySelector('.pop-up-window');
   const body = document.querySelector('body');
@@ -30,7 +30,7 @@ const getDetail = (item) => {
   };
 
   cmtBtn.onclick = () => {
-    fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/:app_id/comments')
-  }
+    fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/:app_id/comments');
+  };
 };
 export default getDetail;

@@ -5,7 +5,7 @@ const CountLeagues = () => {
   fetch(newLeagues.BaseUrl).then((res) => res.json())
     .then((data) => {
       const soccerCount = document.querySelector('.soccer-count');
-      soccerCount.innerHTML = `Soccers(${data.data.slice(0, 6).length})`;
+      soccerCount.innerHTML = data.data.slice(0, 6).length;
     });
 };
 
