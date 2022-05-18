@@ -17,7 +17,11 @@ getLeagues=(data) => {
   const contentBody = document.querySelector('.content-body');
   contentBody.innerHTML = data.map((el) => `<div class="content-card" id=${el.id}>
     <div class="card-img-wrapper"><img src=${el.logos.light} alt="logo"/></div>
+<<<<<<< HEAD
     <div class="card-description"><h4>${el.name}</h4><span class="card-likes"><i class="fa-regular fa-heart"></i><small class="likes-number" id=${el.id}>0 likes</small></span></div>
+=======
+    <div class="card-description"><h4>${el.name}</h4><span class="card-likes"><i class="fa-regular fa-heart"></i><small>5 likes</small></span></div>
+>>>>>>> 569820a7c0776040b35c16b94095a51a7f8dd046
     <button class="comment-button" id="${el.id}">Comments</button>
     </div>
 `).join('');
