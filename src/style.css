@@ -93,6 +93,54 @@ footer p {
   width: 100%;
 }
 
+/* Pop up Window start */
+
+.pop-up-window {
+  display: none;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  z-index: 9;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.pop-up {
+  width: 90%;
+  border: 2px solid #000;
+  padding: 0 10%;
+}
+
+.pop-up-img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pop-up-img > img {
+  width: 70%;
+}
+
+.details {
+  display: flex;
+  gap: 10px;
+}
+
+#close {
+  font-weight: 900;
+  font-size: 4em;
+  position: relative;
+  top: 10px;
+  left: 100%;
+  cursor: pointer;
+}
+
+/* pop-up window end */
+
 @media (max-width: 1000px) {
   .content-card { width: 35%; }
 }
