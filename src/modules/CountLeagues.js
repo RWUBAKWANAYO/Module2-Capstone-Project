@@ -1,12 +1,9 @@
-import Leagues from './leagues.js';
+import fetchCountLeagues from './FetchCountLeagues.js';
 
-const newLeagues = new Leagues();
-const CountLeagues = () => {
-  fetch(newLeagues.BaseUrl).then((res) => res.json())
-    .then((data) => {
-      const soccerCount = document.querySelector('.soccer-count');
-      soccerCount.innerHTML = data.data.slice(0, 6).length;
-    });
-};
+const CountLeagues = () => fetchCountLeagues().then((data) => {
+  const soccerCount = document.querySelector('.soccer-count');
+  soccerCount.innerHTML = data.length;
+  return data.length;
+});
 
 export default CountLeagues;
