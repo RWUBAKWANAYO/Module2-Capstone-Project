@@ -23,7 +23,7 @@ fetchComments = (id) => {
       const commentList = document.querySelector('.generate-comments');
       commentList.innerHTML = '';
       data.forEach((el) => {
-        commentList.innerHTML += `<div>${el.creation_date} ${el.username}: ${el.comment}</div>
+        commentList.innerHTML += `<div>${el.creation_date.replace('-', '/')} ${el.username}: ${el.comment}</div>
                 `;
       });
     });
