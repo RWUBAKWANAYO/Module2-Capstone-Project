@@ -163,9 +163,16 @@ input {
   width: 50%;
 }
 
-.pop-up > .comment-button {
+.sendComment {
   width: fit-content;
   margin: 20px 0;
+  border: 1px #000 solid;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #000;
 }
 
 /* pop-up window end */

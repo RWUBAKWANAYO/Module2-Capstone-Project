@@ -1,10 +1,11 @@
-const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+import FetchComments from './commentsAPI.js';
+
 const getDetail = (item) => {
   const popUp = document.querySelector('.pop-up-window');
   const body = document.querySelector('body');
   body.style.overflow = 'hidden';
   popUp.style.display = 'flex';
-  popUp.innerHTML = `<div class="pop-up">
+  popUp.innerHTML = `<div class="pop-up" id=${item.id}>
     <div id="close">&times</div>
     <div class="pop-up-img"><img src=${item.logos.light} alt="logo"/></div>
     <div class="card-name"><h1>${item.name}</h1></div>
@@ -14,23 +15,26 @@ const getDetail = (item) => {
     <div class="add-comment">Add a comment</div>
     <input type="text" id="name" placeholder="Your name">
     <textarea id="txt-area" placeholder="Your insights"></textarea>
-
-   
-
-    <button class="commentBtn">Comment</button>
-
+    <button class="sendComment">Comment</button>
     </div>
 `;
   const closeBtn = document.querySelector('#close');
-  const cmtBtn = document.querySelector('.commentBtn');
+  const sendComment = document.querySelector('.sendComment');
 
   closeBtn.onclick = () => {
     popUp.style.display = 'none';
     body.style.overflow = 'scroll';
   };
 
-  cmtBtn.onclick = () => {
-    fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/:app_id/comments')
-  }
+  sendComment.onclick = (e) => {
+    e.preventDefault();
+    const { id } = item;
+    const comments = new FetchComments();
+    const name = document.querySelector('#name').value;
+    const comment = document.querySelector('#txt-area').value;
+    if (name.length > 0 && comment.length > 0) {
+      comments.postComments({ id, name, comment });
+    }
+  };
 };
 export default getDetail;
