@@ -1,6 +1,7 @@
 import css from './style.css'; // eslint-disable-line
 import Leagues from './modules/leagues.js';
 import LeagueLikes from './modules/LeagueLikes.js';
+import CountLeagues from './modules/CountLeagues.js';
 import logo from './assets/logo.png';
 import getDetail from './modules/pop-up-details.js';
 
@@ -33,4 +34,5 @@ contentBody.addEventListener('click', (event) => {
 window.addEventListener('load', () => {
   checkAppId();
   newLeagues.fetchLeague();
+  CountLeagues();
 });
