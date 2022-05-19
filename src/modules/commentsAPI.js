@@ -1,3 +1,5 @@
+import displayCom from './countComments.js';
+
 class FetchComments {
 getComments = (id) => {
   const commentList = document.querySelector('.generate-comments');
@@ -11,6 +13,7 @@ getComments = (id) => {
           commentList.innerHTML += `<div>${el.creation_date} ${el.username}: ${el.comment}</div>
                 `;
         });
+        displayCom(data);
       }
     });
 }
@@ -20,6 +23,7 @@ fetchComments = (id) => {
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${id}`;
   fetch(url)
     .then((res) => res.json()).then((data) => {
+      displayCom(data);
       const commentList = document.querySelector('.generate-comments');
       commentList.innerHTML = '';
       data.forEach((el) => {
