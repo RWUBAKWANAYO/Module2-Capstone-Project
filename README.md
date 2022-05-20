@@ -19,7 +19,7 @@
 
 ## Live Demo 
 
-[Live Demo Link](https://tugsem.github.io/Module2-Capstone-Project/dist)
+[Live Demo Link](https://rwubakwanayo.github.io/Module2-Capstone-Project/dist)
 
 ## Video Link 
 
