@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest --watchAll",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack"
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/RWUBAKWANAYO/Module2-Capstone-Project#readme",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.17.12",
-    "@babel/preset-env": "^7.17.12",
+    "@babel/preset-env": "^7.18.0",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",

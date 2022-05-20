@@ -1,4 +1,5 @@
 import LeagueLikes from './LeagueLikes.js';
+import { BaseUrl } from './credentials.js';
 
 const newLeagueLikes = new LeagueLikes();
 class Leagues {
@@ -6,12 +7,6 @@ class Leagues {
     this.comment = comment;
     this.like = like;
   }
-
-leagueData = [];
-
-BaseUrl = 'https://api-football-standings.azharimm.site/leagues';
-
-InvolvementBaseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 
 getLeagues=(data) => {
   const contentBody = document.querySelector('.content-body');
@@ -25,13 +20,8 @@ getLeagues=(data) => {
 }
 
 fetchLeague = () => {
-  fetch(this.BaseUrl).then((res) => res.json())
+  fetch(BaseUrl).then((res) => res.json())
     .then((data) => this.getLeagues(data.data.slice(0, 6)));
-}
-
-postAppId = () => {
-  fetch(`${this.InvolvementBaseUrl}/apps`, { method: 'POST' }).then((res) => res.text())
-    .then((appId) => localStorage.setItem('app_id', JSON.stringify(appId)));
 }
 }
 
