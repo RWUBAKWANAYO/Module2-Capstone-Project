@@ -35,6 +35,5 @@ const getDetail = (item) => {
     if (name.length > 0 && comment.length > 0) {
       comments.postComments({ id, name, comment });
     }
-  };
 };
 export default getDetail;
