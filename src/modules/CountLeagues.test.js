@@ -5,9 +5,15 @@ import CountLeagues from './CountLeagues.js';
 
 jest.mock('./FetchCountLeagues.js');
 document.body.innerHTML = '<a href="#" class="soccer-count">Soccers</a>';
-test('Should return array of llleagues', () => {
-  CountLeagues().then((count) => {
-    expect(count).toBe(6);
+describe('Count Leagues should return', () => {
+  test('number', () => {
+    CountLeagues().then((count) => {
+      expect(typeof count).toBe('number');
+    });
   });
-  //   expect(CountLeagues()).toBe(6);
+  test('length of array which is equal to six', () => {
+    CountLeagues().then((count) => {
+      expect(count).toBe(6);
+    });
+  });
 });

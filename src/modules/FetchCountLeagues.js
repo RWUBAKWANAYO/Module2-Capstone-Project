@@ -1,6 +1,5 @@
-import Leagues from './leagues.js';
+import { BaseUrl } from './credentials.js';
 
-const newLeagues = new Leagues();
-const fetchCountLeagues = () => fetch(newLeagues.BaseUrl).then((res) => res.json())
+const fetchCountLeagues = () => fetch(BaseUrl).then((res) => res.json())
   .then((data) => data.data.slice(0, 6));
 export default fetchCountLeagues;

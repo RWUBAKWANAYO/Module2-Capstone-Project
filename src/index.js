@@ -35,6 +35,7 @@ contentBody.addEventListener('click', (event) => {
   if (event.target.tagName === 'I') {
     card = event.target.parentElement.parentElement.parentElement;
     newLeagueLikes.postLike(card.id);
+    event.target.style.color = 'red';
   }
 });
 

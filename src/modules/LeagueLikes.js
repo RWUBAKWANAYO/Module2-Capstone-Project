@@ -1,14 +1,14 @@
+import { applicationId, InvolvementBaseUrl } from './credentials.js';
+
 class LeagueLikes {
   constructor(likeId, likes) {
     this.likeId = likeId;
     this.likes = likes;
   }
 
-  InvolvementBaseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
-
     postLike = (likeId) => {
-      const appId = localStorage.getItem('app_id').replace(/['"]+/g, '');
-      const url = this.InvolvementBaseUrl.replace(/['"]+/g, '');
+      const appId = applicationId.replace(/['"]+/g, '');
+      const url = InvolvementBaseUrl.replace(/['"]+/g, '');
       const config = {
         method: 'POST',
         headers: {
@@ -21,10 +21,8 @@ class LeagueLikes {
     };
 
       fetchLikes = () => {
-        let appId = localStorage.getItem('app_id');
-        if (!appId) return;
-        appId = appId.replace(/['"]+/g, '');
-        const url = this.InvolvementBaseUrl.replace(/['"]+/g, '');
+        const appId = applicationId.replace(/['"]+/g, '');
+        const url = InvolvementBaseUrl.replace(/['"]+/g, '');
         fetch(`${url}/apps/${appId}/likes/`).then((res) => res.json()).then((likes) => this.upDateUILikes(likes));
       };
 
