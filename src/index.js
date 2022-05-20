@@ -4,9 +4,13 @@ import LeagueLikes from './modules/LeagueLikes.js';
 import CountLeagues from './modules/CountLeagues.js';
 import logo from './assets/logo.png';
 import getDetail from './modules/pop-up-details.js';
+import FetchComments from './modules/commentsAPI.js';
 
 const logoImg = document.querySelector('#logo');
 logoImg.src = `${logo}`;
+
+// create pop-up window:
+const comments = new FetchComments();
 document.onclick = (e) => {
   if (e.target.className === 'comment-button') {
     const btnId = e.target.id;
@@ -15,11 +19,13 @@ document.onclick = (e) => {
         data.data.forEach((item) => {
           if (item.id === btnId) {
             getDetail(item);
+            comments.getComments(btnId);
           }
         });
       });
   }
 };
+// .
 const newLeagues = new Leagues();
 const newLeagueLikes = new LeagueLikes();
 const checkAppId = () => { if (!localStorage.getItem('app_id')) return newLeagues.postAppId(); return null; };
@@ -31,6 +37,7 @@ contentBody.addEventListener('click', (event) => {
     newLeagueLikes.postLike(card.id);
   }
 });
+
 window.addEventListener('load', () => {
   checkAppId();
   newLeagues.fetchLeague();
