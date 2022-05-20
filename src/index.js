@@ -28,7 +28,6 @@ document.onclick = (e) => {
 // .
 const newLeagues = new Leagues();
 const newLeagueLikes = new LeagueLikes();
-const checkAppId = () => { if (!localStorage.getItem('app_id')) return newLeagues.postAppId(); return null; };
 const contentBody = document.querySelector('.content-body');
 contentBody.addEventListener('click', (event) => {
   let card = event.target.parentElement.parentElement;
@@ -40,7 +39,6 @@ contentBody.addEventListener('click', (event) => {
 });
 
 window.addEventListener('load', () => {
-  checkAppId();
   newLeagues.fetchLeague();
   CountLeagues();
 });
