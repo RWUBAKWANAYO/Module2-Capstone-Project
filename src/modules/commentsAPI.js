@@ -1,11 +1,12 @@
 import displayCom from './countComments.js';
+import { applicationId, InvolvementBaseUrl } from './credentials.js';
 
 class FetchComments {
 getComments = (id) => {
   const commentList = document.querySelector('.generate-comments');
-  const appId = localStorage.getItem('app_id').replace(/['"]+/g, '');
-  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${id}`;
-  fetch(url)
+  const appId = applicationId.replace(/['"]+/g, '');
+  const url = InvolvementBaseUrl.replace(/['"]+/g, '');
+  fetch(`${url}/apps/${appId}/comments?item_id=${id}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.length > 0) {
@@ -19,9 +20,9 @@ getComments = (id) => {
 }
 
 fetchComments = (id) => {
-  const appId = localStorage.getItem('app_id').replace(/['"]+/g, '');
-  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${id}`;
-  fetch(url)
+  const appId = applicationId.replace(/['"]+/g, '');
+  const url = InvolvementBaseUrl.replace(/['"]+/g, '');
+  fetch(`${url}/apps/${appId}/comments?item_id=${id}`)
     .then((res) => res.json()).then((data) => {
       displayCom(data);
       const commentList = document.querySelector('.generate-comments');
@@ -34,8 +35,8 @@ fetchComments = (id) => {
 };
 
 postComments = ({ id, name, comment }) => {
-  const appId = localStorage.getItem('app_id').replace(/['"]+/g, '');
-  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments/`;
+  const appId = applicationId.replace(/['"]+/g, '');
+  const url = InvolvementBaseUrl.replace(/['"]+/g, '');
   const config = {
     method: 'POST',
     headers: {
@@ -48,7 +49,7 @@ postComments = ({ id, name, comment }) => {
       comment,
     }),
   };
-  fetch(url, config)
+  fetch(`${url}/apps/${appId}/comments/`, config)
     .then(() => this.fetchComments(id));
 }
 }

@@ -8,14 +8,16 @@ const getDetail = (item) => {
   popUp.innerHTML = `<div class="pop-up" id=${item.id}>
     <div id="close">&times</div>
     <div class="pop-up-img"><img src=${item.logos.light} alt="logo"/></div>
-    <div class="card-name"><h1>${item.name}</h1></div>
-    <div class="details"><p><b>slug: </b>${item.slug}</p><p><b>abbr: </b>${item.abbr}</p></div>
-    <div class="comment-counter">Comments</div>
-    <div class="generate-comments"></div>
-    <div class="add-comment">Add a comment</div>
-    <input type="text" id="name" placeholder="Your name">
-    <textarea id="txt-area" placeholder="Your insights"></textarea>
-    <button class="sendComment">Comment</button>
+      <div class="detail-cont">
+        <div class="card-name"><h1>${item.name}</h1></div>
+        <div class="details"><p><b>slug: </b>${item.slug}</p><p><b>abbr: </b>${item.abbr}</p></div>
+        <div class="comment-counter">Comments</div>
+        <div class="generate-comments"></div>
+        <div class="add-comment">Add a comment</div>
+        <input type="text" id="name" placeholder="Your name">
+        <textarea id="txt-area" placeholder="Your insights"></textarea>
+        <button class="sendComment">Comment</button>
+      </div>
     </div>
 `;
   const closeBtn = document.querySelector('#close');
